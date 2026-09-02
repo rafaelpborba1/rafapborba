@@ -1,16 +1,10 @@
 CC = gcc
-CFLAGS = -Wall -Wextra -O3 -fopenmp -std=c99 -D_POSIX_C_SOURCE=199309L
-LDFLAGS = -fopenmp -lpthread -lm
+CFLAGS = -Wall -O3 -fopenmp -pthread
 
-TARGET = mandelbrot
-SRC = main.c
+all: mandelbrot
 
-all: $(TARGET)
-
-$(TARGET): $(SRC)
-	$(CC) $(CFLAGS) $(SRC) -o $(TARGET) $(LDFLAGS)
+mandelbrot: main.c
+	$(CC) $(CFLAGS) main.c -o mandelbrot -lm
 
 clean:
-	rm -f $(TARGET) *.pgm times.txt evidencias.log
-
-.PHONY: all clean
+	rm -f mandelbrot *.pgm times.txt
