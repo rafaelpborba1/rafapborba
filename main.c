@@ -251,8 +251,8 @@ int main(int argc, char *argv[]) {
 
     fprintf(ft, "Serial: %.6f s\n", t_serial);
     fprintf(ft, "OpenMP: %.6f s\n", t_omp);
-    fprintf(ft, "Pthreads 1 (Blocos): %.6f s\n", t_p1);
-    fprintf(ft, "Pthreads 2 (Ciclico): %.6f s\n", t_p2);
+    fprintf(ft, "Pthreads1: %.6f s\n", t_p1);
+    fprintf(ft, "Pthreads2: %.6f s\n", t_p2);
     fclose(ft);
 
     free(img);
