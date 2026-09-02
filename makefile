@@ -1,15 +1,10 @@
 CC = gcc
-CFLAGS = -Wall -Wextra -O2 -fopenmp -pthread
-LDFLAGS = -lm -fopenmp -pthread
+CFLAGS = -Wall -O3 -fopenmp -pthread
 
-TARGET = mandelbrot
+all: mandelbrot
 
-all: $(TARGET)
-
-$(TARGET): main.c
-	$(CC) $(CFLAGS) main.c -o $(TARGET) $(LDFLAGS)
+mandelbrot: main.c
+	$(CC) $(CFLAGS) main.c -o mandelbrot -lm
 
 clean:
-	rm -f $(TARGET) *.pgm times.txt
-
-.PHONY: all clean
+	rm -f mandelbrot *.pgm times.txt

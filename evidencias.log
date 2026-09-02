@@ -1,0 +1,63 @@
+Script started on 2026-09-02 12:10:35-03:00 [TERM="xterm-256color" TTY="/dev/pts/18" COLUMNS="130" LINES="11"]
+[?2004h]0;rafaelborba@LAPTOP-1NHA1UCQ: /mnt/c/Users/rafap/OneDrive/Área de Trabalho/rpb[01;32mrafaelborba@LAPTOP-1NHA1UCQ[00m:[01;34m/mnt/c/Users/rafap/OneDrive/Área de Trabalho/rpb[00m$ [7mwhoami[27m
+[7mpwd[27m
+[7muname -a[27m
+[7mgcc --version[27m
+[7mmake clean[27m
+[7mmake[27m[A[A[A[A[A]0;rafaelborba@LAPTOP-1NHA1UCQ: /mnt/c/Users/rafap/OneDrive/Área de Trabalho/rpb[01;32mrafaelborba@LAPTOP-1NHA1UCQ[00m:[01;34m/mnt/c/Users/rafap/OneDrive/Área de Trabalho/rpb[00m$ whoami
+pwd
+uname -a
+gcc --version
+make clean
+make
+[?2004lrafaelborba
+/mnt/c/Users/rafap/OneDrive/Área de Trabalho/rpb
+Linux LAPTOP-1NHA1UCQ 6.6.87.2-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Thu Jun  5 18:30:46 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
+gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+Copyright (C) 2023 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+rm -f mandelbrot *.pgm times.txt
+gcc -Wall -O3 -fopenmp -pthread main.c -o mandelbrot -lm
+[?2004h]0;rafaelborba@LAPTOP-1NHA1UCQ: /mnt/c/Users/rafap/OneDrive/Área de Trabalho/rpb[01;32mrafaelborba@LAPTOP-1NHA1UCQ[00m:[01;34m/mnt/c/Users/rafap/OneDrive/Área de Trabalho/rpb[00m$ [7m./mandelbrot 4 4 50 1[27m
+[7mcat mandelbrot_rpb_serial.pgm[27m
+
+[7m./mandelbrot 6 6 30 3[27m
+[7mcat mandelbrot_rpb_openmp.pgm[27m
+
+[7m./mandelbrot 10 6 40 4[27m
+[7mcat mandelbrot_rpb_pthreads1.pgm[27m[A[A[A[A[A[A[A]0;rafaelborba@LAPTOP-1NHA1UCQ: /mnt/c/Users/rafap/OneDrive/Área de Trabalho/rpb[01;32mrafaelborba@LAPTOP-1NHA1UCQ[00m:[01;34m/mnt/c/Users/rafap/OneDrive/Área de Trabalho/rpb[00m$ ./mandelbrot 4 4 50 1
+cat mandelbrot_rpb_serial.pgm
+
+./mandelbrot 6 6 30 3
+cat mandelbrot_rpb_openmp.pgm
+
+./mandelbrot 10 6 40 4
+cat mandelbrot_rpb_pthreads1.pgm
+[?2004l5 10 10 10
+5 15 30 25
+255 255 255 255
+5 15 30 25
+8 8 17 17 17 17
+8 17 25 34 255 17
+8 25 42 255 255 42
+255 255 255 255 255 42
+8 25 42 255 255 42
+8 17 25 34 255 17
+6 6 6 12 12 12 12 12 12 12
+6 12 19 19 19 25 44 25 19 12
+6 19 19 31 38 255 255 255 44 19
+255 255 255 255 255 255 255 255 44 19
+6 19 19 31 38 255 255 255 44 19
+6 12 19 19 19 25 44 25 19 12
+[?2004h]0;rafaelborba@LAPTOP-1NHA1UCQ: /mnt/c/Users/rafap/OneDrive/Área de Trabalho/rpb[01;32mrafaelborba@LAPTOP-1NHA1UCQ[00m:[01;34m/mnt/c/Users/rafap/OneDrive/Área de Trabalho/rpb[00m$ [7mcat times.txt[27m
+[7mexit[27m[A]0;rafaelborba@LAPTOP-1NHA1UCQ: /mnt/c/Users/rafap/OneDrive/Área de Trabalho/rpb[01;32mrafaelborba@LAPTOP-1NHA1UCQ[00m:[01;34m/mnt/c/Users/rafap/OneDrive/Área de Trabalho/rpb[00m$ cat times.txt
+exit
+[?2004lSerial: 0.000006 s
+OpenMP: 0.002370 s
+Pthreads1: 0.000988 s
+Pthreads2: 0.000411 s
+exit
+
+Script done on 2026-09-02 12:10:58-03:00 [COMMAND_EXIT_CODE="0"]
